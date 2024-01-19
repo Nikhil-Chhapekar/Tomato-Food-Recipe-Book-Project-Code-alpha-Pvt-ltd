@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Tomato-Food Recipe</title>
+</head>
+
+<body>
+
+    <!--- Navigation Bar -->
+    <div class="header">
+        <nav class="nav-bar">
+            <h1>Tomato</h1>
+            <a href="#" class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="menu-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Search Bar -->
+        <div class="title">Find a Recipe</div>
+        <div class="search-wrapper">
+            <div class="fa fa-search"></div>
+            <input type="text" name="" id="search" placeholder="What do you want to eat?" onkeyup="search()">
+            <div class="fa fa-times" onclick="clearInput()"></div>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+    <div class="result">
+        <h1>Your Search Result: </h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="card-grid">
+        <div class="food-list" id="food-list">
+            <p id="none" style="display: none;">Sorry, the food you were looking for was not available.</p>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/Maggi.jpg">
+                </div>
+                <div class="card-body">
+                    <h3> Maggi </h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="getRecipeDetails()">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/poha-recipe.jpg">
+                </div>
+                <div class="card-body">
+                    <h3> Poha </h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get2ndRecipe()">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/chicken-Biryani.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Chicken Biryani</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get3rdRecipe()">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/omelette.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Omelette</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get4thRecipe()">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/upma.jpg">
+                </div>
+                <div class="card-body">
+                    <h3> Semolina (upma) </h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get5thRecipe()">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/Lumpia.jpg">
+                </div>
+                <div class="card-body">
+                    <h3> Lumpia</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/samosa.jpg">
+                </div>
+                <div class="card-body">
+                    <h3> Samosa</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get7thRecipe()">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/chicken-burger.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Chicken Burger</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get8thRecipe()">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/Veg-Manchurian-FI-1.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Manchurian</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get9thRecipe()">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/gulab jamun.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Gulal Jamun</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get10thRecipe()">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/rasgulla.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Rasgulla</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get11thRecipe()">Get Recipe</button>
+                </div>
+            </div>
+        </div>
+
+        <!--Ending of Main Content-->
+
+        <!--Recipe Details-->
+        <div class="meal-detail" id="meal-detail">
+            <!-- recipe close btn -->
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- recipe details -->
+            <div class="meal-content">
+                <h2 class="meal-name">Maggi</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">Maggi is a popular brand of instant noodles known for its quick and
+                        easy preparation. Made from wheat flour and water, Maggi noodles are often accompanied by a
+                        flavor packet containing spices and herbs. Widely enjoyed as a quick snack or light meal, Maggi
+                        is customizable with added vegetables or proteins. The brand has gained a global following,
+                        especially in Asian countries, and has become a cultural icon due to its convenience and unique
+                        taste. </p>
+                </div>
+                <div class="meal-instruct">
+                    <h3>Ingridients:</h3>
+                    <p><br>1 packet Maggi noodles
+                        <br>1 cup water
+                        <br>1 tablespoon oil
+                        <br>1 medium-sized onion, finely chopped
+                        <br>1 medium-sized tomato, finely chopped
+                        <br>1/2 cup mixed vegetables (carrots, peas, beans, etc.)
+                        <br>1/2 teaspoon ginger-garlic paste (optional)
+                        <br>1/2 teaspoon red chili powder (adjust according to your spice preference)
+                        <br>1/2 teaspoon turmeric powder
+                        <br>1/2 teaspoon garam masala powder
+                        <br>Salt to taste
+                        <br>Chopped coriander leaves for garnishing
+                        <br> Lemon wedges for serving
+
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p><br>Noodles Preparation:
+
+                        Boil 1 cup of water in a pan. Once it starts boiling, add the Maggi noodles and cook until they
+                        are soft. Drain the water and keep the noodles aside.
+                        <br>Vegetable Preparation:
+
+                        In a separate pan, heat oil over medium heat. Add finely chopped onions and sauté until they
+                        become translucent.
+
+                        Add ginger-garlic paste (if using) and sauté for a minute until the raw smell disappears.
+
+                        Add the mixed vegetables and cook for 2-3 minutes until they become slightly tender.
+
+                        Add finely chopped tomatoes and cook until they become soft.
+                        <br>Seasoning:
+
+                        Add red chili powder, turmeric powder, garam masala, and salt. Mix well and cook for another 2
+                        minutes.
+                        <br>Combine Noodles and Vegetables:
+
+                        Add the boiled Maggi noodles to the vegetable mixture. Mix everything well, ensuring the noodles
+                        are coated with the spices.
+                        <br>Garnish and Serve:
+
+                        Garnish with chopped coriander leaves.
+
+                        Serve hot, optionally with lemon wedges on the side.
+                        <br>In a wide pan, melt the butter or margarine. Add the onions. Cook until onions are soft.
+                        <br>Put-in the ginger and cook for 2 minutes
+                        <br>Add the chicken liver. Crush the chicken liver while cooking it in the pan.
+                        <br>Add the chopped pig ears and pork belly. Cook for 10 to 12 minutes
+                        <br>Put-in the soy sauce, garlic powder, and chili. Mix well
+                        <br>Add salt and pepper to taste
+                        <br>Put-in the mayonnaise and mix with the other ingredients
+                        <br>Transfer to a serving plate. Top with chopped green onions and raw egg.
+                        <br>Serve hot. Share and Enjoy (add the lemon or calamansi before eating)
+                    </p>
+
+                </div>
+                <div class="meal-img">
+                    <img src="images/Maggi.jpg" alt="">
+                </div>
+                <div class="meal-link">
+                    <a href="https://youtu.be/dn4l0lt34qY?si=HXHmlZE4bjrp45k9" class="meal-link-btn">Watch Video</a>
+                </div>
+            </div>
+        </div>
+        <div class="second-meal-detail" id="second-meal-detail">
+            <!-- recipe close btn -->
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- recipe details -->
+            <div class="meal-content">
+                <h2 class="meal-name">Poha</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">Poha is a popular Indian breakfast dish made with flattened rice
+                        (poha), sautéed with a mix of vegetables, spices, and peanuts. It's a quick and light dish,
+                        often garnished with fresh coriander and served with lemon wedges. Poha is a flavorful and
+                        nutritious choice for breakfast or a light meal.</p>
+                </div>
+                <div class="meal-instruct">
+                    <h3>Ingridients:</h3>
+                    <p>
+
+                        1 cup thick poha (flattened rice)<br>
+                        1 medium-sized onion, finely chopped<br>
+                        1 medium-sized potato, peeled and diced<br>
+                        1/2 cup green peas (fresh or frozen)<br>
+                        1-2 green chilies, finely chopped<br>
+                        1/2 teaspoon mustard seeds<br>
+                        1/2 teaspoon cumin seeds<br>
+                        8-10 curry leaves<br>
+                        1/4 cup peanuts<br>
+                        1/4 teaspoon turmeric powder<br>
+                        Salt to taste<br>
+                        1 tablespoon oil<br>
+                        Fresh coriander leaves for garnishing<br>
+                        Lemon wedges for serving
+
+
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p>1. Rinse the poha under running water for a minute. Drain excess water and set it aside. Let it
+                        sit for about 5-10 minutes to soften.<br>
+                        2. In a pan, heat oil over medium heat. Add mustard seeds and cumin seeds. Allow them to
+                        splutter.<br>
+                        Add peanuts and sauté until they turn golden brown.<br>
+                        Add curry leaves, chopped green chilies, and onions. Sauté until onions become translucent.<br>
+                        Add diced potatoes and cook until they are slightly tender. If needed, sprinkle some water and
+                        cover the pan to cook the potatoes faster.<br>
+                        Add green peas and cook for another 2-3 minutes.<br>
+                        3. Once the vegetables are cooked, add the soaked and softened poha to the pan.<br>
+                        Add turmeric powder and salt. Mix everything gently to combine. Cook for an additional 3-5
+                        minutes on low heat.<br>
+                        4. Garnish with freshly chopped coriander leaves.<br>
+                        5. Serve hot with a side of lemon wedges. Poha is often enjoyed with sev, grated coconut, or a
+                        dollop of yogurt.
+
+                    </p>
+
+                </div>
+                <div class="meal-img">
+                    <img src="images/poha-recipe.jpg" alt="">
+                </div>
+                <div class="meal-link">
+                    <a href="https://youtu.be/pNzxeWcbVtU?si=L1817ky7hNORPnLL" class="meal-link-btn">Watch Video</a>
+                </div>
+            </div>
+        </div>
+        <div class="third-meal-detail" id="third-meal-detail">
+            <!-- recipe close btn -->
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- recipe details -->
+            <div class="meal-content">
+                <h2 class="meal-name">Chiken Biryani</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">Marinate chicken in yogurt and spices. Cook aromatic basmati rice
+                        separately. Sauté onions, add tomatoes, and blend with marinated chicken. Layer rice and
+                        chicken, top with ghee, fried onions, and saffron milk. Dum cook for 20-25 minutes. Fluff and
+                        serve hot. Enjoy the flavorful and aromatic Chicken Biryani!
+                    </p>
+                </div>
+                <div class="meal-instruct">
+                    <h3>Ingridients:</h3>
+                    <p><strong>For Marinating Chicken:</strong><br>
+                        - 500g chicken, cut into pieces<br>
+                        - 1 cup yogurt<br>
+                        - 1 tablespoon ginger-garlic paste<br>
+                        - 1 teaspoon red chili powder<br>
+                        - 1 teaspoon turmeric powder<br>
+                        - 1 teaspoon garam masala<br>
+                        - Salt to taste<br>
+
+                        <strong>For Rice:</strong><br>
+                        - 2 cups basmati rice, soaked for 30 minutes<br>
+                        - 4-5 cups water<br>
+                        - 1 bay leaf<br>
+                        - 4-5 green cardamom pods<br>
+                        - 4-5 cloves<br>
+                        - 1-inch cinnamon stick<br>
+                        - Salt to taste<br>
+
+                        <strong>For Biryani Masala:</strong><br>
+                        - 2 large onions, thinly sliced<br>
+                        - 2 tomatoes, chopped<br>
+                        - 1/2 cup mint leaves, chopped<br>
+                        - 1/2 cup coriander leaves, chopped<br>
+                        - 1 teaspoon biryani masala powder<br>
+                        - 1/2 teaspoon red chili powder<br>
+                        - 1/4 teaspoon turmeric powder<br>
+                        - 1/2 cup fried onions (for garnish)<br>
+
+                        <strong>For Layering:</strong><br>
+                        - Ghee or oil<br>
+                        - Saffron strands soaked in warm milk (for color and aroma)<br>
+
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p>
+                        <li><strong>Marinate the Chicken:</strong>
+                            <ul>
+                                <li>500g chicken, cut into pieces</li>
+                                <li>1 cup yogurt</li>
+                                <li>1 tablespoon ginger-garlic paste</li>
+                                <li>1 teaspoon red chili powder</li>
+                                <li>1 teaspoon turmeric powder</li>
+                                <li>1 teaspoon garam masala</li>
+                                <li>Salt to taste</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Cook the Rice:</strong>
+                            <ul>
+                                <li>2 cups basmati rice, soaked for 30 minutes</li>
+                                <li>4-5 cups water</li>
+                                <li>1 bay leaf</li>
+                                <li>4-5 green cardamom pods</li>
+                                <li>4-5 cloves</li>
+                                <li>1-inch cinnamon stick</li>
+                                <li>Salt to taste</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Prepare Biryani Masala:</strong>
+                            <ul>
+                                <li>2 large onions, thinly sliced</li>
+                                <li>2 tomatoes, chopped</li>
+                                <li>1/2 cup mint leaves, chopped</li>
+                                <li>1/2 cup coriander leaves, chopped</li>
+                                <li>1 teaspoon biryani masala powder</li>
+                                <li>1/2 teaspoon red chili powder</li>
+                                <li>1/4 teaspoon turmeric powder</li>
+                                <li>1/2 cup fried onions (for garnish)</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Layering:</strong>
+
+                        <li>Ghee or oil</li>
+                        <li>Saffron strands soaked in warm milk (for color and aroma)</li>
+
+                        </li>
+
+                        <li><strong>Dum Cooking:</strong>
+
+                        <li>Cover the pan tightly with a lid or aluminum foil.</li>
+                        <li>Cook on low heat for about 20-25 minutes, allowing the flavors to meld and the rice to cook
+                            completely.</li>
+                        </li>
+
+
+                        <li><strong>Serve Hot:</strong>
+
+                        <li>Gently fluff the biryani with a fork, mixing the layers.</li>
+                        <li>Serve hot with raita or a side salad.</li>
+
+                        </li>
+
+
+                    </p>
+
+                </div>
+                <div class="meal-img">
+                    <img src="images/chicken-Biryani.jpg" alt="">
+                </div>
+                <div class="meal-link">
+                    <a href="https://youtu.be/K9qJQmOeohU?si=ZFAWy1Xjnki815yb" class="meal-link-btn">Watch Video</a>
+                </div>
+            </div>
+        </div>
+        <div class="four-meal-detail" id="four-meal-detail">
+            <!-- recipe close btn -->
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- recipe details -->
+            <div class="meal-content">
+                <h2 class="meal-name">Omelette</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">
+
+                        Whisk eggs, season with salt and pepper. Cook in a hot, greased pan until set. Add desired
+                        fillings like cheese, vegetables, or ham. Fold and serve for a quick, delicious, and
+                        customizable breakfast or brunch option.
+                    </p>
+                </div>
+                <div class="meal-instruct">
+                    <h3>Ingridients:</h3>
+                    <p><br>3 eggs, beaten
+                        <br>1 tsp sunflower oil
+                        <br>1 tsp butter
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p><br>1. Beat the eggs: Use two or three eggs per omelette, depending on how hungry you are. Beat
+                        the eggs lightly with a fork.
+                        2. Melt the butter: Use an 8-inch nonstick skillet for a 2-egg omelette, a 9-inch skillet for 3
+                        eggs. Melt the butter over medium-low heat, and keep the temperature low and slow when cooking
+                        the eggs so the bottom doesn’t get too brown or overcooked.
+                        3. Add the eggs: Let the eggs sit for a minute, then use a heatproof silicone spatula to gently
+                        lift the cooked eggs from the edges of the pan. Tilt the pan to allow the uncooked eggs to flow
+                        to the edge of the pan.
+                        4. Fill the omelette: Add the filling—but don’t overstuff the omelette—when the eggs begin to
+                        set. Cook for a few more seconds
+                        5. Fold and serve: Fold the omelette in half. Slide it onto a plate with the help of a silicone
+                        spatula.
+                    </p>
+
+                </div>
+                <div class="meal-img">
+                    <img src="images/omelette.jpg" alt="">
+                </div>
+                <div class="meal-link">
+                    <a href="https://tinyurl.com/bde4yd4u" class="meal-link-btn">Watch Video</a>
+                </div>
+            </div>
+        </div>
+        <div class="five-meal-detail" id="five-meal-detail">
+            <!-- recipe close btn -->
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- recipe details -->
+            <div class="meal-content">
+                <h2 class="meal-name">Semolina(Upma)</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">Roasted semolina cooked with a tempering of mustard seeds, urad dal,
+                        and cumin, along with sautéed vegetables like onions, carrots, and peas. Seasoned with turmeric
+                        and garnished with fresh coriander, Upma is a quick, savory breakfast or brunch dish, offering a
+                        warm and comforting start to the day.
+                    </p>
+                </div>
+                <div class="meal-instruct">
+                    <h3>Ingridients:</h3>
+                    <p>1 cup semolina (sooji/rava)<br>
+                        2 tablespoons oil or ghee<br>
+                        1 teaspoon mustard seeds<br>
+                        1 teaspoon urad dal (black gram)<br>
+                        1 teaspoon chana dal (split chickpeas)<br>
+                        1/2 teaspoon cumin seeds<br>
+                        1/2 inch ginger, finely chopped<br>
+                        1 green chili, finely chopped<br>
+                        1 onion, finely chopped<br>
+                        1 carrot, finely chopped<br>
+                        1/4 cup green peas<br>
+                        2 tablespoons chopped coriander leaves<br>
+                        1/2 teaspoon turmeric powder<br>
+                        Salt to taste<br>
+                        2 cups water<br>
+                        Lemon wedges (optional, for serving)<br>
+
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p>1. **Roast Semolina:**
+                        <br>- Heat a pan over medium heat and dry roast the semolina until it turns light brown and
+                        gives a nutty aroma. Keep stirring to avoid burning. Once done, remove it from the pan and set
+                        aside.
+
+                        2. **Prepare Tempering:**
+                        <br>- In the same pan, heat oil or ghee. Add mustard seeds, urad dal, chana dal, and cumin
+                        seeds. Allow them to splutter.
+
+                        3. **Saute Aromatics:**
+                        <br>- Add chopped ginger and green chili. Saute for a minute until the raw smell disappears.
+
+                        4. **Add Vegetables:**
+                        <br>- Add chopped onions and cook until they turn translucent. Add carrots, green peas, and
+                        continue to sauté for another 2-3 minutes.
+
+                        5. **Cook Semolina:**
+                        <br>- Add the roasted semolina to the pan. Mix well to coat the semolina with the tempered
+                        ingredients and vegetables.
+
+                        6. **Season and Add Water:**
+                        <br>- Add turmeric powder, salt, and water to the pan. Stir continuously to avoid lumps. Bring
+                        it to a boil.
+
+                        7. **Simmer and Cover:**
+                        <br>- Reduce the heat to low, cover the pan, and let it simmer for 5-7 minutes or until the upma
+                        is cooked and the water is absorbed.
+
+                        8. **Garnish and Serve:**
+                        <br>- Once cooked, fluff the upma with a fork. Garnish with chopped coriander leaves. Serve hot
+                        with lemon wedges if desired.
+
+                    </p>
+
+                </div>
+                <div class="meal-img">
+                    <img src="images/upma.jpg" alt="">
+                </div>
+                <div class="meal-link">
+                    <a href="https://youtu.be/ah5FK1vwgB4?si=fBLbP90VgmC7x3tN" class="meal-link-btn">Watch Video</a>
+                </div>
+            </div>
+        </div>
+        <div class="six-meal-detail" id="six-meal-detail">
+            <!-- recipe close btn -->
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- recipe details -->
+            <div class="meal-content">
+                <h2 class="meal-name">Lumpia</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">Different spring rolls known as "lumpia" are popular in the
+                        Philippines and Indonesia. Lumpia are formed of a thin pastry skin, also known as a "lumpia
+                        wrapper," that encloses either savory or sweet fillings. It may be either fresh or deep-fried
+                        and is frequently served as an appetizer or snack.
+                    </p>
+                </div>
+                <div class="meal-instruct">
+                    <h3>Ingridients:</h3>
+                    <p><br>50 pieces lumpia wrapper (Up to you how many pieces)
+                        <br>3 cups cooking oil
+                        <br>1 1/2 lbs ground pork
+                        <br>2 pieces onion minced
+                        <br>2 pieces carrots minced
+                        <br>1 1/2 teaspoons garlic powder
+                        <br>1/2 teaspoon ground black pepper
+                        <br>1/2 cup parsley chopped
+                        <br>1 1/2 teaspoons salt
+                        <br>1 tablespoon sesame oil
+                        <br>2 eggs
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p><br>1. Combine all filling ingredients in a bowl. Mix well.
+                        <br>2. Scoop around 1 to 1 1/2 tablespoons of filling and place over a piece of lumpia wrapper.
+                        Spread the filling and then fold both sides of the wrapper. Fold the bottom. Brush beaten egg
+                        mixture on the top end of the wrapper. Roll-up until completely wrapped. Perform the same step
+                        until all mixture are consumed.
+                        <br>3. Heat oil in a cooking pot. Deep fry lumpia in medium heat until it floats.
+                        <br>4. Remove from the pot. Let excess oil drip. Serve. Share and enjoy
+                    </p>
+
+                </div>
+                <div class="meal-img">
+                    <img src="images/Lumpia.jpg" alt="">
+                </div>
+                <div class="meal-link">
+                    <a href="https://tinyurl.com/2yp63vne" class="meal-link-btn">Watch Video</a>
+                </div>
+            </div>
+        </div>
+        <div class="seven-meal-detail" id="seven-meal-detail">
+            <!-- recipe close btn -->
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- recipe details -->
+            <div class="meal-content">
+                <h2 class="meal-name">Samosa</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">Samosa is a popular Indian snack featuring a crispy, triangular
+                        pastry filled with a savory mixture of spiced potatoes, peas, and sometimes other vegetables.
+                        The dough is made from all-purpose flour, while the filling is seasoned with aromatic spices
+                        such as cumin, coriander, and garam masala. These flavorful parcels are deep-fried until golden
+                        brown, resulting in a delicious, crunchy exterior with a warm and flavorful interior. Samosas
+                        are often served with chutney or sauce and are enjoyed as a tasty appetizer or snack.
+                    </p>
+                </div>
+                <div class="meal-instruct">
+                    <h3>Ingridients:</h3>
+                    <p>For the Dough:
+
+                        2 cups all-purpose flour (maida)<br>
+                        1/4 cup oil<br>
+                        Water, as needed<br>
+                        A pinch of salt<br>
+                        For the Filling:
+
+                        2 cups boiled and mashed potatoes<br>
+                        1 cup boiled and chopped mixed vegetables (peas, carrots, and green beans work well)<br>
+                        1 finely chopped onion<br>
+                        1 teaspoon grated ginger<br>
+                        1 teaspoon minced garlic<br>
+                        1-2 green chilies, finely chopped (adjust to taste)<br>
+                        1 teaspoon cumin seeds<br>
+                        1 teaspoon coriander powder<br>
+                        1/2 teaspoon turmeric powder<br>
+                        1/2 teaspoon garam masala<br>
+                        Salt, to taste<br>
+                        Fresh coriander leaves, chopped<br>
+                        Oil for frying<br>
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p>Prepare the Dough:
+
+                        In a mixing bowl, combine the all-purpose flour, a pinch of salt, and oil.<br>
+                        Gradually add water and knead the mixture to form a smooth and stiff dough.<br>
+                        Cover the dough with a damp cloth and let it rest for about 30 minutes.<br>
+                        Prepare the Filling:
+
+                        Heat oil in a pan over medium heat. Add cumin seeds and let them splutter.<br>
+                        Add chopped onions, ginger, and garlic. Sauté until the onions become translucent.<br>
+                        Add green chilies and stir for a minute.<br>
+                        Add boiled and mashed potatoes, mixed vegetables, coriander powder, turmeric powder, garam
+                        masala, and salt. Mix well.<br>
+                        Cook the filling for 5-7 minutes, stirring occasionally.<br>
+                        Add chopped coriander leaves, mix, and let the filling cool.<br>
+                        Shape and Fill the Samosas:
+
+                        Divide the dough into small equal-sized balls.<br>
+                        Roll each ball into a thin oval or round shape.<br>
+                        Cut the rolled dough in half to form two semi-circles.<br>
+                        Create a cone shape by folding each semi-circle and sealing the edges with water.<br>
+                        Fill the cone with the prepared potato and vegetable filling, ensuring it's not overfilled.<br>
+                        Seal the open edge of the cone to form a triangular samosa.<br>
+                        Frying the Samosas:
+
+                        Heat oil in a deep pan over medium heat for frying.<br>
+                        Once the oil is hot, gently slide the prepared samosas into the oil.<br>
+                        Fry until they turn golden brown and crispy.<br>
+                        Remove the samosas and place them on a paper towel to absorb excess oil.<br>
+                        Serve:
+
+                        Serve the samosas hot with mint chutney or tamarind sauce.<br>
+                    </p>
+
+                </div>
+                <div class="meal-img">
+                    <img src="images/samosa.jpg" alt="">
+                </div>
+                <div class="meal-link">
+                    <a href="https://youtu.be/3OZn-iCGf5s?si=e9NoBdYYbZFLlzao" class="meal-link-btn">Watch Video</a>
+                </div>
+            </div>
+        </div>
+        <div class="eight-meal-detail" id="eight-meal-detail">
+            <!-- recipe close btn -->
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- recipe details -->
+            <div class="meal-content">
+                <h2 class="meal-name">Chicken Burger</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">Prepare the buns! For the ideal stuffing for juicy burgers, coat or
+                        marinate chicken thighs and breast. Dig it after adding toppings like slaw and sauce along with
+                        your selected side dishes.
+                    </p>
+                </div>
+                <div class="meal-instruct">
+                    <h3>Ingridients:</h3>
+                    <p><br>3 boneless chicken breasts (around half a kg)
+                        <br>1 tspn of pepper
+                        <br>1 tspn of salt
+                        <br>2 tblspns of worcestershire sauce
+                        <br>1 tspn of Mustard powder or all spice powder
+                        <br>2 tblspns of Flour
+                        <br>1 Egg
+                        <br>1 1/2 cups of Breadcrumbs
+                        <br>Soft seeded burger buns
+                        <br>Mayonnaise or KFC Zinger Sauce
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p><br>1. If your chicken breasts are too big, slice them before cooking. Then, marinade the chicken
+                        breasts in the Worcestershire sauce, pepper, salt, mustard, or all-spice powder. Leave the
+                        chicken for at least four hours or over night.
+                        <br>2. An egg and two tablespoons of water should be beaten together to make the batter, which
+                        should then be set aside.
+                        <br>3. Chicken breasts that have been marinated should be heavily dusted in flour. They should
+                        be well coated after being dipped in both the egg and the breadcrumbs.
+                        <br>4. The coated chicken breasts should be deep-fried in heated oil over a medium-high heat
+                        until they are crisp and golden brown.
+                        <br>5. The finished burger should be stacked with the lettuce on top, followed by the chicken,
+                        and then the mayonnaise or KFC zinger sauce. The buns should be cut in half and lightly toasted.
+                        If you'd like a cheesy kick, add some sliced American cheese.
+                    </p>
+
+                </div>
+                <div class="meal-img">
+                    <img src="images/chicken-burger.jpg" alt="">
+                </div>
+                <div class="meal-link">
+                    <a href="https://tinyurl.com/td757uct" class="meal-link-btn">Watch Video</a>
+                </div>
+            </div>
+        </div>
+        <div class="nine-meal-detail" id="nine-meal-detail">
+            <!-- recipe close btn -->
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- recipe details -->
+            <div class="meal-content">
+                <h2 class="meal-name">Manchurian</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">Vegetable Manchurian is a delectable Indo-Chinese dish featuring
+                        flavorful vegetable balls made from a mix of finely chopped vegetables, coated in a seasoned
+                        batter, and deep-fried to golden perfection. The crispy vegetable balls are then tossed in a
+                        savory and tangy Manchurian sauce, which includes a blend of soy sauce, chili sauce, and other
+                        aromatic ingredients. This dish offers a delightful combination of textures and tastes, making
+                        it a popular appetizer or accompaniment to rice or noodles in many Asian cuisines.
+                    </p>
+                </div>
+                <div class="meal-instruct">
+                    <h3>Ingridients:</h3>
+                    <p>
+                        For the Vegetable Balls:
+
+                        1 cup finely chopped mixed vegetables (cabbage, carrots, bell peppers, etc.)<br>
+                        1/4 cup all-purpose flour (maida)<br>
+                        1/4 cup cornflour<br>
+                        1 teaspoon ginger-garlic paste<br>
+                        Salt to taste<br>
+                        Black pepper powder to taste<br>
+                        Soy sauce - 1 teaspoon<br>
+                        Oil for deep frying<br>
+                        For the Manchurian Sauce:
+
+                        1 tablespoon oil<br>
+                        1 tablespoon finely chopped garlic<br>
+                        1 tablespoon finely chopped ginger<br>
+                        1/4 cup finely chopped spring onions (white part)<br>
+                        1/4 cup finely chopped bell peppers (any color)<br>
+                        2 tablespoons soy sauce<br>
+                        1 tablespoon chili sauce (adjust to taste)<br>
+                        1 tablespoon tomato ketchup<br>
+                        1 teaspoon vinegar<br>
+                        1 teaspoon sugar<br>
+                        1 teaspoon cornflour mixed with 2 tablespoons water (for thickening)<br>
+                        Salt to taste<br>
+                        Chopped spring onion greens for garnish<br>
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p>For the Vegetable Balls:
+
+                        In a bowl, combine finely chopped mixed vegetables, all-purpose flour, cornflour, ginger-garlic
+                        paste, soy sauce, salt, and black pepper powder.<br>
+                        Mix well to form a thick batter. If the mixture is too dry, you can add a little water.<br>
+                        Heat oil in a pan for deep frying. Take small portions of the mixture and shape them into small
+                        balls.<br>
+                        Fry the vegetable balls until they turn golden brown. Remove and drain excess oil on a paper
+                        towel.<br>
+                        For the Manchurian Sauce:
+
+                        Heat oil in a pan. Add chopped garlic and ginger, sauté for a minute.<br>
+                        Add chopped spring onions (white part) and bell peppers. Stir-fry for 2-3 minutes until they are
+                        slightly tender but still crisp.<br>
+                        Add soy sauce, chili sauce, tomato ketchup, vinegar, sugar, and salt. Mix well.<br>
+                        In a small bowl, mix cornflour with water to make a smooth paste. Add this paste to the pan to
+                        thicken the sauce. Stir continuously to avoid lumps.<br>
+                        Once the sauce thickens, add the fried vegetable balls. Toss the balls in the sauce until they
+                        are well coated.<br>
+                        Garnish with chopped spring onion greens.<br>
+                        Serve hot as an appetizer or with steamed rice/noodles.<br>
+                    </p>
+
+                </div>
+                <div class="meal-img">
+                    <img src="images/Veg-Manchurian-FI-1.jpg" alt="">
+                </div>
+                <div class="meal-link">
+                    <a href="https://youtu.be/zSYmtXhs_oA?si=GFE55WxxDMuDeywd" class="meal-link-btn">Watch Video</a>
+                </div>
+            </div>
+        </div>
+        <div class="ten-meal-detail" id="ten-meal-detail">
+            <!-- recipe close btn -->
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- recipe details -->
+            <div class="meal-content">
+                <h2 class="meal-name">Gulab Jamun</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">Gulab Jamun is a beloved Indian dessert renowned for its irresistible
+                        sweetness and soft texture. These delectable, round dumplings are made from a combination of
+                        milk powder, flour, and ghee, forming a dough that is shaped into small balls and deep-fried to
+                        a golden brown hue. After frying, they are soaked in a fragrant sugar syrup infused with
+                        cardamom and sometimes saffron, allowing the Gulab Jamuns to absorb the sweetness and become
+                        delightfully moist. Often adorned with chopped nuts, these syrup-soaked treats are a cherished
+                        indulgence at festive occasions and celebrations.
+                    </p>
+                </div>
+                <div class="meal-instruct">
+                    <h3>Ingridients:</h3>
+                    <p>Ingredients:
+
+                        1 cup milk powder<br>
+                        1/4 cup all-purpose flour (maida)<br>
+                        1/4 cup ghee (clarified butter)<br>
+                        2-3 tablespoons milk (as needed)<br>
+                        A pinch of baking soda<br>
+                        Oil or ghee for frying.<br>
+                        For the Sugar Syrup:
+
+                        1 cup sugar<br>
+                        1/2 cup water<br>
+                        1/2 teaspoon cardamom powder<br>
+                        A few strands of saffron (optional)<br>
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p><br>For the Gulab Jamun:
+
+                        In a mixing bowl, combine milk powder, all-purpose flour, ghee, and baking soda.<br>
+                        Gradually add milk and knead the mixture into a soft and smooth dough. If needed, add more
+                        milk.<br>
+                        Divide the dough into small portions and shape them into round balls, ensuring they are smooth
+                        and crack-free.<br>
+                        Heat oil or ghee in a pan over medium heat. Fry the gulab jamun balls until they turn golden
+                        brown, then remove and drain excess oil on a paper towel.<br>
+                        For the Sugar Syrup:
+
+                        In a separate pan, combine sugar and water to make a sugar syrup. Bring it to a boil, stirring
+                        until the sugar dissolves.<br>
+                        Add cardamom powder and saffron strands (if using). Simmer the syrup for a few minutes until it
+                        slightly thickens.<br>
+                        Assembling:
+
+                        Allow the fried gulab jamun balls to cool slightly before adding them to the warm sugar
+                        syrup.<br>
+                        Let the gulab jamuns soak in the syrup for at least a few hours to absorb the sweetness.<br>
+                        Garnish with chopped nuts if desired.<br>
+                    </p>
+
+                </div>
+                <div class="meal-img">
+                    <img src="images/gulab jamun.jpg" alt="">
+                </div>
+                <div class="meal-link">
+                    <a href="https://youtu.be/9KyLw8sCthI?si=kyIv1NhPASecx0Ga" class="meal-link-btn">Watch Video</a>
+                </div>
+            </div>
+        </div>
+        <div class="eleven-meal-detail" id="four-meal-detail">
+            <!-- recipe close btn -->
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- recipe details -->
+            <div class="meal-content">
+                <h2 class="meal-name">Rasgulla</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">Rasgulla is a popular and delightful Indian dessert known for its
+                        spongy texture and sweet taste. Made from fresh cottage cheese (chhena), the cheese balls are
+                        gently cooked in a sugar syrup until they absorb the sweetness and become light and airy.
+                        Rasgullas are often served chilled, making them a refreshing and beloved treat, especially
+                        during festivals and celebrations. This classic dessert is cherished for its simplicity and the
+                        burst of sweetness it brings to the palate
+                    </p>
+                </div>
+                <div class="meal-instruct">
+                    <h3>Ingridients:</h3>
+                    <p>1 liter full-fat milk<br>
+                        2 tablespoons lemon juice or white vinegar<br>
+                        1 cup sugar<br>
+                        4 cups water<br>
+                        A pinch of cardamom powder (optional)<br>
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p>Prepare the Chhena (Cottage Cheese):
+
+                        Boil the milk in a large pot.
+                        Add lemon juice or vinegar to the boiling milk to curdle it.
+                        Once the milk has curdled, strain the whey using a muslin cloth to obtain the chhena (cottage
+                        cheese).
+                        Rinse the chhena under cold water to remove the lemony flavor.
+                        Knead the Chhena:
+
+                        Knead the chhena on a clean surface for about 10 minutes until it becomes smooth and soft.
+                        Shape into Balls:
+
+                        Divide the chhena into small portions and roll them into smooth, crack-free balls.
+                        Prepare the Sugar Syrup:
+
+                        In a wide pan, mix sugar and water to make a sugar syrup.
+                        Bring the syrup to a boil and then simmer.
+                        Cook the Rasgullas:
+
+                        Gently add the chhena balls to the simmering sugar syrup.
+                        Cover the pan and cook for about 15-20 minutes until the rasgullas are soft, spongy, and doubled
+                        in size.
+                        Cool and Serve:
+
+                        Let the rasgullas cool to room temperature.
+                        Optionally, sprinkle a pinch of cardamom powder on top for flavor.
+                        Chill (optional):
+
+                        For a refreshing touch, refrigerate the rasgullas before serving.
+                    </p>
+
+                </div>
+                <div class="meal-img">
+                    <img src="images/rasgulla.jpg" alt="">
+                </div>
+                <div class="meal-link">
+                    <a href="https://youtu.be/7VDWtgqDun4?si=ToHhOYaJMiHqPauA" class="meal-link-btn">Watch Video</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!--Ending of Recipe Details-->
+
+    <!--Footer-->
+    <div class="footer">
+        <div class="social-btn">
+            <a href="#"><i class="	fab fa-facebook"></i></a>
+            <a href="#"><i class="	fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/nikhil-chhapekar-0b14a81b7
+            "><i class="	fab fa-linkedin"></i></a>
+            <a href="https://github.com/Nikhil-Chhapekar
+            " target="_blank"><i class=" fab fa-github"></i></a>
+        </div>
+        <div class="quick-bar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>Copyright &copy; Nikhil chhapekar 2024</p>
+    </div>
+
+    <!--Ending of Footer-->
+
+    <!--Script for Javascript-->
+    <script src="./assets/index.js"></script>
+</body>
+
+</html>
